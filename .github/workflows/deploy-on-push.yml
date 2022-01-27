@@ -1,15 +1,13 @@
 name: deploy on push
-on: [push]
-
+on:
+  push:
+      branches:
+        - main
+            
 jobs:
   deploy-app:
     runs-on: ubuntu-latest
     steps:
-      - name: deploy on push
-      on:
-        push:
-          branches:
-            - main
       - name: check out the code to build server
         uses: actions/checkout@v2
       - name: copy file to server
